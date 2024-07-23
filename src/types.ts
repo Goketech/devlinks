@@ -10,3 +10,7 @@ export interface Link {
     removeLink: (id: number) => void;
   }
   
+  export interface NavProps {
+    active: string;
+    setActive: (active: string) => void;
+  }
