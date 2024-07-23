@@ -6,7 +6,7 @@ const Page = () => {
         <div className="min-h-screen mt-32 mb-12 flex items-center justify-center">
             <div className="flex min-w-[396px] flex-col items-center">
                 <div className="flex items-center space-x-2 mb-12">
-                    <Image src="/logo.svg" alt="logo" width={40} height={40} />
+                    <Image src="/logo.svg" alt="logo" width={32} height={32} />
                     <span className="text-[#333333] text-4xl font-bold">devlinks</span>
                 </div>
                 <div className="w-full">
