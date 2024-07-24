@@ -55,7 +55,7 @@ const Profile = () => {
                                 </div>
                             </label>
                         </div>
-                        <p className="max-w-[215px]">Image must be below 1024x1024px. Use PNG or JPG format.</p>    
+                        <p className="max-w-[215px]">Image must be below 1024x1024px. Use PNG or JPG format.</p>
                     </div>
                 </div>
                 <div className="flex justify-between mb-6">
@@ -69,6 +69,9 @@ const Profile = () => {
                 <div className="flex justifu-between mb-6">
                     <label htmlFor="email" className="text-base text-[#737373] min-w-[210px]">Email</label>
                     <input placeholder="e.g. email@example.com" type="text" className="w-full border rounded-md p-3 outline-[#633CFF]" name="email" id="email" />
+                </div>
+                <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-10">
+                    <button className="outline-[#633CFF] ml-auto bg-[#633CFF] hover:bg-white border hover:text-[#633CFF] hover:border-[#633CFF] rounded-xl text-base font-semibold py-3 px-7 text-white">Save</button>
                 </div>
             </form>
         </div>

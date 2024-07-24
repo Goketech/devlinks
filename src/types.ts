@@ -8,6 +8,7 @@ export interface Link {
     link: Link;
     index: number;
     removeLink: (id: number) => void;
+    updateLink: (id: number, key: keyof Link, value: string) => void;
   }
   
   export interface NavProps {

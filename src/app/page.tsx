@@ -18,9 +18,6 @@ export default function Home() {
           {active === "links" ? <AddLinks /> : <Profile />}
           <div className="flex flex-col flex-grow">
             {/* <EmptyLinks /> */}
-            <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-10">
-              <button className="outline-[#633CFF] ml-auto bg-[#633CFF] hover:bg-white border hover:text-[#633CFF] hover:border-[#633CFF] rounded-xl text-base font-semibold py-3 px-7 text-white">Save</button>
-            </div>
           </div>
         </div>
       </div>
