@@ -70,7 +70,7 @@ const Page = () => {
         if (error) {
             alert(error.message);
         } else {
-            alert('User created successfully!');
+            alert('Logged in successfully!');
             if (data.session) {
                 const { access_token } = data.session;
                 sessionStorage.setItem('access_token', access_token);

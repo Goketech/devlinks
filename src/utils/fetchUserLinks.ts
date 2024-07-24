@@ -10,7 +10,6 @@ const fetchUserLinks = async (userId: string) => {
         console.error('Error fetching user links:', error);
         return [];
     } else {
-        console.log('User links fetched successfully:', data);
         return data;
     }
 };
