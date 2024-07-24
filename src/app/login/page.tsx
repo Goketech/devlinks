@@ -84,7 +84,7 @@ const Page = () => {
                     router.push('/');
                 }, 2000);
             }
-        };
+        }};
 
         return (
             <div className="min-h-screen mt-32 mb-12 flex items-center justify-center">
