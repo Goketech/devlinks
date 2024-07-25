@@ -128,6 +128,7 @@ const Profile = () => {
                                                 height={40}
                                                 src="/image-card-purple.svg"
                                                 className="text-2xl mb-2"
+                                                alt="upload image"
                                             />
                                             <span className="font-bold">+ Upload Image</span>
                                         </>
@@ -138,6 +139,7 @@ const Profile = () => {
                                                 height={40}
                                                 src="/image-card-white.svg"
                                                 className="text-2xl mb-2"
+                                                alt="change image"
                                             />
                                             <span className="font-bold">Change Image</span>
                                         </>
