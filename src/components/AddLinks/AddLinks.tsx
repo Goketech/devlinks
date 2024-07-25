@@ -60,13 +60,15 @@ const AddLinks: React.FC = () => {
 
   const validateLinks = () => {
     setFormHasErrors(false);
+    const platforms = new Set();
     for (const link of links) {
       let baseUrl = '';
       baseUrl = baseUrls[link.platform] || '';
-      if (!link.url || !link.url.startsWith(baseUrl)) {
+      if (!link.url || !link.url.startsWith(baseUrl) || platforms.has(link.platform)) {
         setFormHasErrors(true);
         break;
       }
+      platforms.add(link.platform);
     }
   };
 
@@ -82,7 +84,7 @@ const AddLinks: React.FC = () => {
 
     validateLinks();
     if (formHasErrors) {
-      alert('Please enter valid links');
+      alert('Please enter valid and unique links');
       return;
     }
 
@@ -98,6 +100,11 @@ const AddLinks: React.FC = () => {
 
 
   const addLink = () => {
+    if (links.length >= 13) {
+      alert('You can only add up to 13 links');
+      return;
+    }
+
     setLinks([...links, { id: Date.now(), platform: '', url: '' }]);
   };
 
