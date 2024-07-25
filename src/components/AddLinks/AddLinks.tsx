@@ -123,7 +123,7 @@ const AddLinks: React.FC = () => {
           </button>
         </div>
         {links.length === 0 && !loading && <EmptyLinks />}
-        <div className='h-[400px] overflow-y-scroll scrollbar-hide mt-3 md:mt-5'>
+        <div className='md:h-[400px] overflow-y-scroll scrollbar-hide mt-3 md:mt-5'>
           {links.map((link, index) => (
             <Links key={link.id} link={link} index={index} removeLink={removeLink} updateLink={updateLink} />
           ))}
