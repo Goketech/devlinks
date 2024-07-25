@@ -40,7 +40,7 @@ const ProfilePage = () => {
 
     return (
         <div>
-            <div className='bg-[#633CFF] h-[357px] p-6 rounded-b-[32px]'>
+            <div className='bg-white md:bg-[#633CFF] h-[357px] p-6 rounded-b-[32px]'>
                 <div className='bg-white px-6 py-4 rounded-xl flex justify-between'>
                     <Link href="/">
                         <button className='py-3 px-6 border border-[#633CFF] text-base font-semibold text-[#633CFF] rounded-xl'>Back to Editor</button>
@@ -48,7 +48,7 @@ const ProfilePage = () => {
                     <button onClick={handleShareLink} className='py-3 px-6 bg-[#633CFF] text-white text-base font-semibold rounded-xl'>Share Link</button>
                 </div>
                 <div className="flex items-center justify-center h-full mt-28">
-                    <div className="bg-white py-12 px-14 w-[349px] flex flex-col items-center justify-center h-full rounded-3xl shadow-xl">
+                    <div className="bg-white py-12 px-14 w-[349px] flex flex-col items-center justify-center h-full rounded-3xl md:shadow-xl">
                         <div>
                             <div>
                                 <Image src={profile.image || '/started-image.png'} alt='user-profile' width={104} height={104} />

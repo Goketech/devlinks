@@ -123,7 +123,7 @@ const Links: React.FC<LinksProps> = ({
     const errorMessage = validateUrl(link.platform, link.url);
 
     return (
-        <div className="p-10 mr-10">
+        <div className="p-5 md:p-10 mr-0 md:mr-10">
             <div className="flex justify-between mt-5 mb-3 text-base text-[#737373]">
                 <div className="font-semibold flex gap-2">
                     <Image src="/linkbar-grey.svg" width={16} height={16} />

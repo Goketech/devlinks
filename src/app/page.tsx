@@ -12,13 +12,10 @@ export default function Home() {
   return (
     <main className="">
       <Nav active={active} setActive={setActive} />
-      <div className="flex">
-        <Phone />
-        <div className="flex flex-col w-full mr-16">
-          {active === "links" ? <AddLinks /> : <Profile />}
-          <div className="flex flex-col flex-grow">
-            {/* <EmptyLinks /> */}
-          </div>
+      <div className="flex flex-col w-full mr-16">
+        {active === "links" ? <AddLinks /> : <Profile />}
+        <div className="flex flex-col flex-grow">
+          {/* <EmptyLinks /> */}
         </div>
       </div>
     </main>

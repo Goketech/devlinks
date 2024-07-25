@@ -93,14 +93,14 @@ const Profile = () => {
                 </p>
             </div>
             <form onSubmit={handleSave} className="mt-12">
-                <div className="flex mb-6 max-w-[728px]">
+                <div className="flex flex-col gap-4 md:gap-0 md:flex-row mb-6 max-w-[728px]">
                     <label
                         className="min-w-[210px] text-base text-[#737373]"
                         htmlFor="profileImage"
                     >
                         Profile Picture
                     </label>
-                    <div className="flex gap-6 items-center">
+                    <div className="flex flex-col md:flex-row gap-6 md:items-center">
                         <div className="relative w-52 h-52 overflow-hidden">
                             <input
                                 type="file"
@@ -145,12 +145,12 @@ const Profile = () => {
                                 </div>
                             </label>
                         </div>
-                        <p className="max-w-[215px]">
+                        <p className="max-w-[215px] mb-6 md:mb-0">
                             Image must be below 1024x1024px. Use PNG or JPG format.
                         </p>
                     </div>
                 </div>
-                <div className="flex justify-between mb-6">
+                <div className="flex flex-col md:flex-row justify-between mb-6">
                     <label
                         htmlFor="firstName"
                         className="text-base text-[#737373] min-w-[210px]"
@@ -174,7 +174,7 @@ const Profile = () => {
                         )}
                     </div>
                 </div>
-                <div className="flex justifu-between mb-6">
+                <div className="flex flex-col md:flex-row mb-6">
                     <label
                         htmlFor="lastName"
                         className="text-base text-[#737373] min-w-[210px]"
@@ -198,7 +198,7 @@ const Profile = () => {
                         )}
                     </div>
                 </div>
-                <div className="flex justifu-between mb-6">
+                <div className="flex flex-col md:flex-row mb-6">
                     <label
                         htmlFor="email"
                         className="text-base text-[#737373] min-w-[210px]"
@@ -222,7 +222,7 @@ const Profile = () => {
                         )}
                     </div>
                 </div>
-                <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-10">
+                <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-5 md:mr-10">
                     <button type="submit" className="outline-[#633CFF] ml-auto bg-[#633CFF] hover:bg-white border hover:text-[#633CFF] hover:border-[#633CFF] rounded-xl text-base font-semibold py-3 px-7 text-white">
                         Save
                     </button>

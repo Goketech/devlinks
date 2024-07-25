@@ -8,6 +8,7 @@ import fetchUserLinks from "@/utils/fetchUserLinks";
 import insertLink from "@/utils/insertLink";
 import deleteLinks from '@/utils/deleteLinks';
 import EmptyLinks from '../EmptyLinks/EmptyLinks';
+import Phone from '../Phone/Phone';
 
 const baseUrls: { [key: string]: string } = {
   'Github': 'https://www.github.com/',
@@ -112,23 +113,26 @@ const AddLinks: React.FC = () => {
   };
 
   return (
-    <div className='bg-white p-10'>
-      <div className='mr-10 max-w-[808px] mb-5 w-full'>
-        <h2 className='text-3xl text-[#333333] font-bold mt-10'>Customize Your links</h2>
-        <p className='text-base text-[#737373] mt-2'>Add/edit/remove links below and then share all your profiles with the world!</p>
-        <button onClick={addLink} className='outline-[#633CFF] hover:bg-[#EFEBFF] text-[#633CFF] font-semibold mt-10 flex center justify-center w-full border-2 border-[#633CFF] rounded-xl py-3 px-7 w-full'>
-          + Add New Link
-        </button>
-      </div>
-      {links.length === 0 && !loading && <EmptyLinks />}
-      <div className='h-[400px] overflow-y-scroll scrollbar-hide mt-5'>
-        {links.map((link, index) => (
-          <Links key={link.id} link={link} index={index} removeLink={removeLink} updateLink={updateLink} />
-        ))}
-      </div>
-      <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-10">
-        <button disabled={formHasErrors} onClick={handleSave} className={`outline-[#633CFF] ml-auto bg-[#633CFF]  hover:bg-white border hover:text-[#633CFF] hover:border-[#633CFF] rounded-xl text-base font-semibold py-3 px-7 text-white ${formHasErrors ? "bg-[#BEADFF] cursor-not-allowed" : "bg-[#633CFF]"
-          }`}>Save</button>
+    <div className='flex'>
+      <Phone />
+      <div className='bg-white p-10'>
+        <div className='mr-10 max-w-[808px] mb-5 w-full'>
+          <h2 className='text-3xl text-[#333333] font-bold mt-10'>Customize Your links</h2>
+          <p className='text-base text-[#737373] mt-2'>Add/edit/remove links below and then share all your profiles with the world!</p>
+          <button onClick={addLink} className='outline-[#633CFF] hover:bg-[#EFEBFF] text-[#633CFF] font-semibold mt-10 flex center justify-center w-full border-2 border-[#633CFF] rounded-xl py-3 px-7 w-full'>
+            + Add New Link
+          </button>
+        </div>
+        {links.length === 0 && !loading && <EmptyLinks />}
+        <div className='h-[400px] overflow-y-scroll scrollbar-hide mt-3 md:mt-5'>
+          {links.map((link, index) => (
+            <Links key={link.id} link={link} index={index} removeLink={removeLink} updateLink={updateLink} />
+          ))}
+        </div>
+        <div className="border-t py-6 px-10 mt-28 border-[#d9d9d9] flex items-end content-end mr-5 md:mr-10">
+          <button disabled={formHasErrors} onClick={handleSave} className={`outline-[#633CFF] ml-auto bg-[#633CFF]  hover:bg-white border hover:text-[#633CFF] hover:border-[#633CFF] rounded-xl text-base font-semibold py-3 px-7 text-white ${formHasErrors ? "bg-[#BEADFF] cursor-not-allowed" : "bg-[#633CFF]"
+            }`}>Save</button>
+        </div>
       </div>
     </div>
   )

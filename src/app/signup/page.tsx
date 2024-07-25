@@ -96,8 +96,8 @@ const Page = () => {
     };
 
     return (
-        <div className="min-h-screen mt-32 mb-12 flex items-center justify-center">
-            <div className="flex min-w-[396px] flex-col items-center">
+        <div className="mx-6 md:mx-0 md:min-h-screen md:mt-32 mb-12 md:flex md:items-center md:justify-center">
+            <div className="flex md:min-w-[396px] flex-col mt-6 md:mt-0 md:items-center">
                 <div className="flex items-center space-x-2 mb-12">
                     <Image src="/logo.svg" alt="logo" width={32} height={32} />
                     <span className="text-[#333333] text-4xl font-bold">devlinks</span>
@@ -205,8 +205,8 @@ const Page = () => {
                         </button>
                     </form>
                 </div>
-                <p className="text-sm pt-6">
-                    Already have an account?{' '}
+                <p className="text-sm text-center md:text-left pt-6">
+                    Already have an account?{' '}<br className="md:hidden" />
                     <span className="text-[#633CFF] cursor-pointer">
                         <Link href="/login">Login</Link>
                     </span>
