@@ -24,30 +24,37 @@ const buttonStyles: { [key: string]: string } = {
 };
 
 const buttonIcons: { [key: string]: string } = {
-    'Github': '/icons/github.svg',
-    'Frontend Mentor': '/icons/frontend-mentor.svg',
-    'Twitter': '/icons/twitter.svg',
-    'Linkedln': '/icons/linkedin.svg',
-    'YouTube': '/icons/youtube.svg',
-    'Facebook': '/icons/facebook.svg',
-    'Twitch': '/icons/twitch.svg',
-    'Dev.to': '/icons/devto.svg',
-    'Codewars': '/icons/codewars.svg',
-    'Codepen': '/icons/codepen.svg',
-    'freeCodeCamp': '/icons/freecodecamp.svg',
-    'GitLab': '/icons/gitlab.svg',
-    'Hashnode': '/icons/hashnode.svg',
-    'Stack Overflow': '/icons/stackoverflow.svg',
+    'Github': '/github-active.svg',
+    'Frontend Mentor': '/icons/frontendmentor-active.svg',
+    'Twitter': '/twitter-active.svg',
+    'Linkedln': '/linkedin-active.svg',
+    'YouTube': '/youtube-active.svg',
+    'Facebook': '/facebook-active.svg',
+    'Twitch': '/twitch-active.svg',
+    'Dev.to': '/devto-active.svg',
+    'Codewars': '/codewars-active.svg',
+    'Codepen': '/codepen-active.svg',
+    'freeCodeCamp': '/freecodecamp-active.svg',
+    'GitLab': '/gitlab-active.svg',
+    'Hashnode': '/hashnode-active.svg',
+    'Stack Overflow': '/stackoverflow-active.svg',
 };
+
+const arrowIcon = '/icon-right.svg';
+const frontendMentorArrowIcon = '/icon-right-grey.svg';
 
 const CustomButton: React.FC<ButtonProps> = ({ variant, url }) => {
     const styles = buttonStyles[variant];
     const icon = buttonIcons[variant];
+    const arrow = variant === 'Frontend Mentor' ? frontendMentorArrowIcon : arrowIcon;
 
     return (
-        <a href={url} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center w-full p-3 rounded-md ${styles}`}>
-            {icon && <Image src={icon} alt={`${variant} icon`} width={24} height={24} className="mr-2" />}
-            <span>{variant}</span>
+        <a href={url} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-between w-full p-3 rounded-md ${styles}`}>
+            <div className="flex items-center">
+                {icon && <Image src={icon} alt={`${variant} icon`} width={24} height={24} className="mr-2" />}
+                <span>{variant}</span>
+            </div>
+            <Image src={arrow} alt="arrow icon" width={24} height={24} />
         </a>
     );
 };
