@@ -106,7 +106,7 @@ const Page = () => {
                     <div className="text-left mt-10">
                         <h1 className="text-3xl font-bold mb-2">Create account</h1>
                         <p className="text-[#737373]">
-                            Let's get you started sharing your links!
+                            Let&apos;s get you started sharing your links!
                         </p>
                     </div>
                     <form
