@@ -15,3 +15,8 @@ export interface Link {
     active: string;
     setActive: (active: string) => void;
   }
+
+ export interface UserLink {
+    platform: 'Github' | 'Frontend Mentor' | 'Twitter' | 'Linkedln' | 'YouTube' | 'Facebook' | 'Twitch' | 'Dev.to' | 'Codewars' | 'freeCodeCamp' | 'GitLab' | 'Hashnode' | 'Stack Overflow';
+    url: string;
+}

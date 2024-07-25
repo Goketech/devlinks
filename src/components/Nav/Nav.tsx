@@ -19,7 +19,8 @@ const Nav: React.FC<NavProps> = ({ active, setActive }) => {
                 </button>
             </div>
             <Link className="py-3 px-7 border-2 rounded-xl border-[#633CFF] hover:bg-[#EFEBFF] max-h-[49px] outline-[#633CFF]" href="/preview">
-                <span className="text-base text-[#633CFF] font-semibold">Preview</span>
+                <span className="text-base text-[#633CFF] font-semibold hidden md:flex">Preview</span>
+                <Image className="w-5 h-5 md:hidden" src="/eye-active.svg" alt="logo" width={20} height={20} />
             </Link>
         </div>
     )

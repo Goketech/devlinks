@@ -4,9 +4,13 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import fetchProfile from '@/utils/fetchProfile';
+import CustomButton from '@/components/CustomButton/CustomButton';
+import fetchUserLinks from '@/utils/fetchUserLinks';
+import { UserLink } from '@/types';
 
 const ProfilePage = () => {
     const [profile, setProfile] = useState<any>(null);
+    const [userLinks, setUserLinks] = useState<UserLink[]>([]); 
     const [showPopup, setShowPopup] = useState(false);
     const [userId, setUserId] = useState<string | null>(null);
 
@@ -17,6 +21,9 @@ const ProfilePage = () => {
             const fetchData = async () => {
                 const profileData = await fetchProfile(user_id);
                 setProfile(profileData);
+                const linksData = await fetchUserLinks(user_id);
+                setUserLinks(linksData);
+                console.log(linksData)
             };
             fetchData();
         }
@@ -47,18 +54,20 @@ const ProfilePage = () => {
                     </Link>
                     <button onClick={handleShareLink} className='py-3 px-6 bg-[#633CFF] text-white text-base font-semibold rounded-xl'>Share Link</button>
                 </div>
-                <div className="flex items-center justify-center h-full mt-28">
-                    <div className="bg-white py-12 px-14 w-[349px] flex flex-col items-center justify-center h-full rounded-3xl md:shadow-xl">
-                        <div>
-                            <div>
-                                <Image src={profile.image || '/started-image.png'} alt='user-profile' width={104} height={104} />
+                <div className="flex items-center justify-center mt-28">
+                    <div className="bg-white py-12 px-14 w-[349px] justify-center rounded-3xl md:shadow-xl">
+                        <div className='flex flex-col items-center'>
+                            <div className='flex items-center'>
+                                <Image className="rounded-full" src={profile.image || '/started-image.png'} alt='user-profile' width={104} height={104} />
                             </div>
                             <h2>{`${profile.first_name} ${profile.last_name}`}</h2>
                             <p>{profile.email}</p>
                         </div>
                         <div>
-                            <div>
-                                {/* Additional profile details can go here */}
+                            <div className='w-full flex flex-col mt-5 gap-5'>
+                            {userLinks.map((link, index) => (
+                                <CustomButton key={index} variant={link.platform} url={link.url} />
+                            ))}
                             </div>
                         </div>
                     </div>

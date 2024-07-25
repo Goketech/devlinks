@@ -20,7 +20,6 @@ const baseUrls: { [key: string]: string } = {
   'Twitch': 'https://www.twitch.tv/',
   'Dev.to': 'https://www.dev.to/',
   'Codewars': 'https://www.codewars.com/',
-  'Codepen': 'https://www.codepen.io/',
   'freeCodeCamp': 'https://www.freecodecamp.org/',
   'GitLab': 'https://www.gitlab.com/',
   'Hashnode': 'https://www.hashnode.com/',
